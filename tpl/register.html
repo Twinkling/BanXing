@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+</head>
+<body>
+<{include file="Public/header.html" }>
+<div class="body">
+    <section class="column">
+        <form id="form" name="form1" method="post" action="">
+            <article class="module_width_half">
+                <header><h3>注册</h3></header>
+                <div class="module_content">
+                    <fieldset>
+                        <label>用户名</label>
+                        <input id="username" type="text" name="username" style="width:92%;">
+                        <p id="username_empty">用户名不能为空</p>
+                        <p id="username_error">用户名已存在</p>
+                    </fieldset>
+                    <fieldset>
+                        <label>密码</label>
+                        <input id="password" type="password" name="password" style="width:92%;">
+                        <p id="password_error">密码不能为空</p>
+                    </fieldset>
+                    <fieldset>
+                        <label>确认密码</label>
+                        <input id="verify" type="password" name="verify" style="width:92%;">
+                        <p id="verify_error">两次密码不一致</p>
+                    </fieldset>
+                </div>
+                <footer>
+                    <div class="submit_link">
+                        <input type="submit" name="submit" value="注册" id="submit">
+                    </div>
+                </footer>
+            </article>
+        </form>
+
+        <div class="spacer"></div>
+    </section>
+</div>
+<{include file="Public/footer.html" }>
+<script type="text/javascript">
+    $('#username_empty').hide();
+    $('#username_error').hide();
+    $('#password_error').hide();
+    $('#verify_error').hide();
+    $('#username').blur(
+            function () {
+                var username = $('#username').val();
+                if(username == ''){
+                    $('#username_empty').show();
+                    return ;
+                }else $('#username_empty').hide();
+                var url="index.php?controller=user&method=checkusername";
+                $.post(url,{username:username},function(data,status){
+                    if(data.status)
+                        $('#username_error').show();
+                    else $('#username_error').hide();
+                },"json");
+            }
+    );
+    $('#password').blur(
+            function () {
+                var password = $(this).val();
+                if(password == ''){
+                    $('#password_error').show();
+                    return ;
+                }else $('#password_error').hide();
+            }
+    );
+    $('#verify').blur(
+            function () {
+                var verify = $(this).val();
+                var password = $('#password').val();
+                if(verify == ''||verify != password){
+                    $('#verify_error').show();
+                    return ;
+                }else $('#verify_error').hide();
+            }
+    );
+</script>
+</body>
+</html>

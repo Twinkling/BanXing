@@ -1,0 +1,34 @@
+<div class="QAndA">
+    <h2 class="detail_title">
+        <span>旅行问答</span>
+    </h2>
+    <{foreach $data as $question}>
+    <ul class="detail">
+        <li class="user"><{$question.question.username}></li>
+        <li class="time"><{$question.question.dateline}></li>
+        <li class="con"><{$question.question.question}></li>
+        <div class="ans_link">
+            <a href="index.php?controller=qa&method=ans&qid=<{$question.question.id}>" >回复</a>
+        </div>
+        <{foreach $question.answer as $key=>$val}>
+        <ul class="answer_detail">
+            <li class="user"><{$val.username}></li>
+            <li class="time"><{$val.dateline}></li>
+            <li class="con"><{$val.answer}></li>
+        </ul>
+        <{/foreach}>
+    </ul>
+    <{foreachelse}>
+        <div class="empty">暂无问答数据</div>
+    <{/foreach}>
+    <form id="question" method="post" action="index.php?controller=qa&method=askq">
+        <div class="text_area">
+        <textarea rows=5 name="question">
+        </textarea>
+            <input type="submit" name="submit" value="提交问题" id="submit" />
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+
+</script>

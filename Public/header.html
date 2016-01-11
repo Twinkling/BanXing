@@ -1,0 +1,26 @@
+<div class="head_bg">
+    <div class="header">
+        <{if $smarty.session.username eq null}>
+            <a href="index.php?controller=user&method=login">登录</a>
+            <a href="index.php?controller=user&method=register">注册</a>
+        <{else}>
+            欢迎您，<{$smarty.session.username}>
+            <a href="index.php?controller=user&method=logout">退出</a>
+        <{/if}>
+    </div>
+    <div class="nav_bg">
+        <div class="nav">
+            <ul>
+                <li class="x"></li>
+                <li><a href="index.php" <{if $view eq "index"}>class="color"<{/if}>>首页</a></li>
+                <li class="x"></li>
+                <li><a href="index.php?controller=index&method=tip"<{if $view eq "tip"}>class="color"<{/if}>>旅行贴士</a></li>
+                <li class="x"></li>
+                <li><a href="index.php?controller=index&method=scene"<{if $view eq "scene"}>class="color"<{/if}>>景点口碑排行</a></li>
+                <li class="x"></li>
+                <li><a href="index.php?controller=index&method=partner"<{if $view eq "partner"}>class="color"<{/if}>>结伴旅游</a></li>
+                <li class="x"></li>
+            </ul>
+        </div>
+    </div>
+</div>

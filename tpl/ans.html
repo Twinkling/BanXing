@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<{include file="Public/header.html" }>
+<div class="body">
+    <div class="QAndA">
+        <h2 class="detail_title">
+            <span>旅行问答</span>
+        </h2>
+        <{foreach $data as $question}>
+        <ul class="detail">
+            <li class="user"><{$question.question.username}></li>
+            <li class="time"><{$question.question.dateline}></li>
+            <li class="con"><{$question.question.question}></li>
+            <div class="ans_link">
+                <a href="index.php?controller=qa&method=ans&qid=<{$question.question.id}>" >回复</a>
+            </div>
+            <{foreach $question.answer as $key=>$val}>
+            <ul class="answer_detail">
+                <li class="user"><{$val.username}></li>
+                <li class="time"><{$val.dateline}></li>
+                <li class="con"><{$val.answer}></li>
+            </ul>
+            <{/foreach}>
+        </ul>
+        <{foreachelse}>
+        <div class="empty">暂无问答数据</div>
+        <{/foreach}>
+        <form id="question" method="post" action="index.php?controller=qa&method=ansq&qid=<{$question.question.id}>">
+            <div class="text_area">
+        <textarea rows=5 name="answer">
+        </textarea>
+                <input type="submit" name="submit" value="回复" id="submit" />
+            </div>
+        </form>
+    </div>
+</div>
+<{include file="Public/footer.html" }>
+</body>
+</html>
