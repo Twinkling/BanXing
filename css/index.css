@@ -202,13 +202,11 @@ ul.detail .ans_link{
     margin-bottom: 10px;
 }
 .text_area input{
-    font-size: large;
-    color: #00CC00;
     text-align: center;
     border-radius: 5px;
 }
 .scene{
-    margin: 10px auto;
+    border-bottom: dotted #9BA0AF;
 }
 .scenedata{
     margin: 10px auto;
@@ -227,4 +225,22 @@ ul.detail .ans_link{
 .scene_pic img{
     width: 800px;
     height: 600px;
+}
+.addscene{
+    width: 500px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.addscene .label{
+    text-align: left;
+}
+.addscene textarea{
+    width: 500px;
+}
+.addscene .add_link{
+    margin: 10px auto;
+    text-align: left;
+}
+.add_link input{
+    border-radius: 5px;
 }

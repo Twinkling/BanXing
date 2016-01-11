@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>增加景点</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<{include file="Public/header.html" }>
+<div class="body">
+    <div class="addscene">
+        <form method="post" action="index.php?controller=scene&method=add">
+            <fieldset>
+                <div class="label"><label>景点名称</label></div>
+                <input id="username" type="text" name="sname" style="width:92%;">
+            </fieldset>
+            <fieldset>
+                <div class="label"><label>景点地址</label></div>
+                <input id="username" type="text" name="saddress" style="width:92%;">
+            </fieldset>
+            <fieldset>
+                <div class="label"><label>景点排名</label></div>
+                <input id="username" type="text" name="stop" style="width:92%;">
+            </fieldset>
+            <fieldset>
+                <div class="label"><label>景点图片</label></div>
+                <input id="username" type="text" name="spic" style="width:92%;">
+            </fieldset>
+            <div class="label"><label>景点描述</label></div>
+            <textarea rows="5" name="description"></textarea>
+            <div class="add_link">
+                <input type="submit" name="submit" value="回复" id="submit" />
+            </div>
+        </form>
+    </div>
+</div>
+<{include file="Public/footer.html" }>
+</body>
+</html>

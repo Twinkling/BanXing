@@ -4,7 +4,11 @@
             <a href="index.php?controller=user&method=login">登录</a>
             <a href="index.php?controller=user&method=register">注册</a>
         <{else}>
-            欢迎您，<{$smarty.session.username}>
+            <{if $smarty.session.admin eq 1}>
+                欢迎您，管理员：<{$smarty.session.username}>
+            <{else}>
+                欢迎您，会员：<{$smarty.session.username}>
+            <{/if}>
             <a href="index.php?controller=user&method=logout">退出</a>
         <{/if}>
     </div>

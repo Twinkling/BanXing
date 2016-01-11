@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+    <title>景点口碑排行</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="css/index.css" rel="stylesheet" type="text/css" />
 </head>
@@ -8,7 +9,7 @@
 <{include file="Public/header.html" }>
 <div class="body">
     <ul class="scene">
-        <li class="introduction"><{$title}></li>
+        <li class="introduction"><{$title}><a href="index.php?controller=scene&method=add"><增加景点信息></a></li>
         <{foreach $top as $val}>
         <div class="scenedata">
             <div class="scene_desc">

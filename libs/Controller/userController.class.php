@@ -17,6 +17,7 @@ class userController{
 
     public function logout(){
         unset($_SESSION['username']);
+        unset($_SESSION['admin']);
         $this->showmessage('退出成功！', 'index.php');
     }
 
@@ -36,6 +37,7 @@ class userController{
         $authobj = M('auth');
         if($auth = $authobj->checkauth($username, $password)){
             $_SESSION['username'] = $auth['username'];
+            $_SESSION['admin'] = $auth['admin'];
             $this->showmessage('登录成功！', 'index.php');
         }else{
             $this->showmessage('登录失败！', 'index.php?controller=user&method=login');
@@ -75,6 +77,7 @@ class userController{
         $registerobj = M('user');
         $registerobj->register($data);
         $_SESSION['username'] = $username;
+        $_SESSION['admin'] = 0;
         $this->showmessage('注册成功', 'index.php');
     }
     private function showmessage($info, $url){
