@@ -13,7 +13,6 @@ class indexController{
         $introduction = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$introduction;
         $qaobj = M('qa');
         $data = $qaobj->getAllQAndA();
-        //print_r($data);
         VIEW::assign(array("title"=>"简介","introduction"=>$introduction,"view"=>"index","data"=>$data));
         VIEW::display("index.html");
     }
@@ -28,7 +27,6 @@ class indexController{
         $data = $qaobj->getAllQAndA();
         $scene = M('scene');
         $top = $scene->getInfo();
-        print_r($top);
         VIEW::assign(array("title"=>"景点排行","view"=>"scene","data"=>$data,"top"=>$top));
         VIEW::display("scene.html");
     }

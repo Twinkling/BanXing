@@ -210,6 +210,9 @@ ul.detail .ans_link{
 .scene{
     margin: 10px auto;
 }
+.scenedata{
+    margin: 10px auto;
+}
 .scene_desc li{
     margin: 10px auto;
     font-size: 20px;

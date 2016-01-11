@@ -7,10 +7,10 @@
 <body>
 <{include file="Public/header.html" }>
 <div class="body">
-    <ul>
+    <ul class="scene">
         <li class="introduction"><{$title}></li>
         <{foreach $top as $val}>
-        <div class="scene">
+        <div class="scenedata">
             <div class="scene_desc">
                 <li class="top">第<{$val.stop}>名：<{$val.sname}></li>
                 <li class="desc"><{$val.description}></li>
