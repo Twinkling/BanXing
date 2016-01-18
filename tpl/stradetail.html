@@ -11,15 +11,12 @@
 <div class="body">
     <ul>
         <li class="introduction"><{$title}><a href="index.php?controller=strategy&method=add&sid=<{$sid}>&sname=<{$sname}>"><添加攻略></a> </li>
-        <{foreach from=$strategy key=key item=$val}>
-        <ul class="select">
-            <li>
-                test<{$val}>
-                <!--
-                <a href="index.php?controller=strategy&method=detail&sid=<{$val.id}>">攻略</a>
-                <a href="index.php?controller=residence&method=detail&sid=<{$val.id}>">民宿</a>
-                -->
-            </li>
+        <{foreach $strategy as $val}>
+        <ul>
+            <li class="user"><{$val.username}></li>
+            <li class="time"><{$val.dateline}></li>
+            <li class="time">攻略：</li><li class="con"><{$val.strategy}></li>
+            <li class="time">个人感受：</li><li class="con"><{$val.impression}></li>
         </ul>
         <{foreachelse}>
         <div class="empty">暂无攻略</div>

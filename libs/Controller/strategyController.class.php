@@ -22,7 +22,7 @@ class strategyController{
         $sid = intval($_GET['sid']);
         $sname = daddslashes($_GET['sname']);
         if(!isset($_SESSION['username'])||empty($_SESSION['username'])){
-            //$this->showmessage('请登录后操作！',"index.php?controller=user&method=login");
+            $this->showmessage('请登录后操作！',"index.php?controller=user&method=login");
         }
         if(!isset($_POST['submit'])){
             VIEW::assign(array('title'=>"添加".$sname."旅游攻略",'sid'=>$sid));
@@ -39,11 +39,12 @@ class strategyController{
                 'sid'=>$sid,
                 'username'=>$username,
                 'strategy'=>$strategy,
-                'dateline'=>time(),
-                'impression'=>$impression
+                'dateline'=>time()
             );
+            if((!empty($impression))&&isset($impression))
+                $data['impression'] = $impression;
             $strategyobj = M('strategy');
-            $strategyobj->addStrategy();
+            $strategyobj->addStrategy($data);
             $this->showmessage('添加攻略成功！',
                 'index.php?controller=strategy&method=detail&sid='.$sid."&sname=".$sname);
         }

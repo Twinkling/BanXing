@@ -10,7 +10,17 @@
 <div class="body">
     <ul>
         <li class="introduction"><{$title}></li>
-        <li class="content"><{$introduction}></li>
+        <{foreach $scene as $val}>
+        <ul class="select">
+            <li>
+                <{$val.sname}>
+                <a href="index.php?controller=partner&method=detail&sid=<{$val.id}>&sname=<{$val.sname}>">查看队伍</a>
+                <!--<a href="index.php?controller=residence&method=detail&sid=<{$val.id}>&sname=<{$val.sname}>>">民宿</a>-->
+            </li>
+        </ul>
+        <{foreachelse}>
+        <div class="empty">暂无景点数据</div>
+        <{/foreach}>
     </ul>
     <{include file="Public/QAndA.html"}>
 </div>

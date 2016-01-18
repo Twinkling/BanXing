@@ -171,16 +171,16 @@ ul.detail .ans_link{
     border-bottom: 1px dotted #9BA0AF;
     margin: 10px 0px;
 }
-.QAndA li.user{
+li.user{
     font-size: 30px;
     color: #0000FF;
     width: 50px;
 }
-.QAndA li.time{
+li.time{
     color: #9CA1B0;
     margin-bottom: 10px;
 }
-.QAndA li.con{
+li.con{
     text-indent: 42px;
     color: #000000;
     font-weight: bold;
@@ -247,9 +247,11 @@ ul.detail .ans_link{
 .add_link input{
     border-radius: 5px;
 }
+.select{
+    border-bottom: 1px solid #0000FF;
+}
 .select li{
     font-size: 30px;
-    border-bottom: 1px dotted  #1F1F20;
 }
 #add{
     margin: 10px auto;

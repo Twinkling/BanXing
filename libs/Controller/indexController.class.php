@@ -31,9 +31,11 @@ class indexController{
         VIEW::display("scene.html");
     }
     public function partner(){
+        $strategyobj = M('strategy');
+        $result = $strategyobj->listStrategy();
         $qaobj = M('qa');
         $data = $qaobj->getAllQAndA();
-        VIEW::assign(array("title"=>"结伴旅行","view"=>"partner","data"=>$data));
+        VIEW::assign(array("title"=>"结伴旅行","view"=>"partner","data"=>$data,"scene"=>$result));
         VIEW::display("partner.html");
     }
     public function strategy(){

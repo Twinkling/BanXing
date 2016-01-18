@@ -16,7 +16,15 @@ class strategyModel{
 
     function getAll($sid){
         $sql = 'select * from '.$this->_table.' where sid='.$sid;
-        return DB::findAll($sql);
+        $temp = DB::findAll($sql);
+        if(is_array($temp))
+            foreach($temp as $key=>$val){
+                $val['dateline'] = date("Y-m-d  T",$val['dateline']);
+                $temp[$key] = $val;
+            }
+        elseif(!empty($temp))
+            $temp['dateline'] = date("Y-m-d  T",$temp['dateline']);
+        return $temp;
     }
 
     function addStrategy($data){
