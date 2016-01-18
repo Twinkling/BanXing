@@ -54,7 +54,7 @@ class qaController{
         );
         if(!empty($que))
             $data = array($qtemp);
-        VIEW::assign(array('data'=>$data));
+        VIEW::assign(array("title"=>"问题回复","data"=>$data));
         VIEW::display('ans.html');
     }
 

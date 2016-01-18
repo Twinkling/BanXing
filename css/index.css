@@ -206,7 +206,7 @@ ul.detail .ans_link{
     border-radius: 5px;
 }
 .scene{
-    border-bottom: dotted #9BA0AF;
+    border-bottom: double #9BA0AF;
 }
 .scenedata{
     margin: 10px auto;
@@ -218,6 +218,9 @@ ul.detail .ans_link{
 .scene_desc li.top{
     font-size: 25px;
     font-weight: bolder;
+}
+.scene_desc #other{
+    margin-top: 10px;
 }
 .scene_pic {
     text-align: center;
@@ -243,4 +246,14 @@ ul.detail .ans_link{
 }
 .add_link input{
     border-radius: 5px;
+}
+.select li{
+    font-size: 30px;
+    border-bottom: 1px dotted  #1F1F20;
+}
+#add{
+    margin: 10px auto;
+}
+#submit{
+    text-align: left;
 }

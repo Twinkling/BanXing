@@ -22,6 +22,7 @@ class sceneController{
             $this->showmessage('权限不足！',"index.php?controller=index&method=scene");
         }
         if(!isset($_POST['submit'])){
+            VIEW::assign(array("title"=>"新增景点信息"));
             VIEW::display("addscene.html");
         }else{
             $this->checkscene();
@@ -29,7 +30,6 @@ class sceneController{
     }
 
     private function checkscene(){
-        //print_r($_POST);
         $sname = daddslashes($_POST['sname']);
         $saddress = daddslashes($_POST['saddress']);
         $stop = daddslashes($_POST['stop']);

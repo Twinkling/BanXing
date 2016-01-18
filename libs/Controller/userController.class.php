@@ -9,6 +9,7 @@ class userController{
 
     public function login(){
         if(!isset($_POST['submit'])){
+            VIEW::assign(array("title"=>"登录"));
             VIEW::display('login.html');
         }else{
             $this->checklogin();
@@ -23,6 +24,7 @@ class userController{
 
     public function register(){
         if(!isset($_POST['submit'])){
+            VIEW::assign(array("title"=>"注册"));
             VIEW::display('register.html');
         }else{
             $this->checkregister();

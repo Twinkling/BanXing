@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>景点口碑排行</title>
+    <title><{$title}></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="css/index.css" rel="stylesheet" type="text/css" />
 </head>
@@ -13,7 +13,12 @@
         <{foreach $top as $val}>
         <div class="scenedata">
             <div class="scene_desc">
-                <li class="top">第<{$val.stop}>名：<{$val.sname}></li>
+                <li class="top">第<{$val.stop}>名：<{$val.sname}>
+                    <div id="other">
+                        <a href="index.php?controller=strategy&method=detail&sname=<{$val.sname}>" ><旅游攻略></a>
+                        <a href="index.php?controller=residence&method=detail&sname=<{$val.sname}>" ><民宿></a>
+                    </div>
+                </li>
                 <li class="desc"><{$val.description}></li>
             </div>
             <div class="scene_pic">

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title><{$title}></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<{include file="Public/header.html" }>
+<div class="body">
+    <div>
+        <li class="introduction"><{$title}></li>
+    </div>
+    <div class="addscene">
+        <form method="post" action="index.php?controller=strategy&method=add&sid=<{$sid}>"}>
+            <div id="add">
+                <div class="label"><label>攻略</label></div>
+                <textarea rows="5" name="strategy"></textarea>
+            </div>
+            <div id="add">
+                <div class="label"><label>个人感受</label></div>
+                <textarea rows="5" name="impression"></textarea>
+            </div>
+            <div id="submit"><input type="submit" name="submit" value="增加攻略"/> </div>
+        </form>
+    </div>
+</div>
+<{include file="Public/footer.html" }>
+</body>
+</html>

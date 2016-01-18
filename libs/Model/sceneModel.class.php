@@ -16,4 +16,9 @@ class sceneModel{
     public function addscene($data){
         return DB::insert($this->_table,$data);
     }
+
+    public function getIDAndName($order='stop',$rank='asc'){
+        $sql = 'select id,sname from '.$this->_table.' order by '.$order.' '.$rank;
+        return DB::findAll($sql);
+    }
 }
