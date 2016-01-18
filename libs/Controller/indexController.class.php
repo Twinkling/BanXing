@@ -17,9 +17,13 @@ class indexController{
         VIEW::display("index.html");
     }
     public function tip(){
+        $result = M("index");
+        $tips = $result->getTips();
+        $tips = str_replace("\n", "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",str_replace("\r", "",$tips));
+        $tips = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$tips;
         $qaobj = M('qa');
         $data = $qaobj->getAllQAndA();
-        VIEW::assign(array("title"=>"旅行贴士","view"=>"tip","data"=>$data));
+        VIEW::assign(array("title"=>"旅行贴士","view"=>"tip","data"=>$data,"tips"=>$tips));
         VIEW::display("tip.html");
     }
     public function scene(){

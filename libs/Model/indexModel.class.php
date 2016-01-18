@@ -11,6 +11,8 @@ class indexModel{
         return file_get_contents("data/Introduction.txt");
     }
 
-    //function
+    function getTips(){
+        return file_get_contents("data/common_sense.txt");
+    }
 
 }
