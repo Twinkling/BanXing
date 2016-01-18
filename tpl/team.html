@@ -10,16 +10,19 @@
 <{include file="Public/header.html" }>
 <div class="body">
     <ul>
-        <li class="introduction"><{$title}><a href="index.php?controller=strategy&method=add&sid=<{$sid}>&sname=<{$sname}>"><添加攻略></a> </li>
-        <{foreach $strategy as $val}>
+        <li class="introduction"><{$title}><a href="index.php?controller=partner&method=add&sid=<{$sid}>"><创建队伍></a></li>
+        <{foreach $team as $val}>
         <ul class="list">
-            <li class="user"><{$val.username}></li>
-            <li class="time"><{$val.dateline}></li>
-            <li class="time">攻略：</li><li class="con"><{$val.strategy}></li>
-            <li class="time">个人感受：</li><li class="con"><{$val.impression}></li>
+            <li class="time">
+                出发日期：<{$val.dateline}>
+            </li>
+            <li>
+                团队成员：<li><{$val.username}></li>
+            </li>
+            <a href="index.php?controller=partner&method=join&id=<{$val.id}>">加入队伍</a>
         </ul>
         <{foreachelse}>
-        <div class="empty">暂无攻略</div>
+        <div class="empty">暂无队伍数据</div>
         <{/foreach}>
     </ul>
 </div>

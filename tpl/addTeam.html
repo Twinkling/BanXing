@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title><{$title}></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<{include file="Public/header.html" }>
+<div class="body">
+    <ul class="list">
+        <li class="introduction"><{$title}></li>
+        <form method="post" action="index.php?controller=partner&method=add">
+            <input type="hidden" name="sid" value="<{$team.sid}>"/>
+            <input type="hidden" name="sname" value="<{$team.sname}>"/>
+            <li><input type="radio" name="date" value="one" checked>一天后出发</li>
+            <li><input type="radio" name="date" value="three">三天后出发</li>
+            <li><input type="radio" name="date" value="five">五天后出发</li>
+            <li><input type="submit" name="submit" value="提交"/></li>
+        </form>
+    </ul>
+</div>
+<{include file="Public/footer.html" }>
+</body>
+</html>

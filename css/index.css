@@ -253,6 +253,9 @@ li.con{
 .select li{
     font-size: 30px;
 }
+.list{
+    border-bottom: 1px solid #0000FF;
+}
 #add{
     margin: 10px auto;
 }
