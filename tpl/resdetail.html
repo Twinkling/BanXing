@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title><{$title}></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<{include file="Public/header.html" }>
+<div class="body">
+    <ul class="scene">
+        <li class="introduction"><{$title}><a href="index.php?controller=residence&method=add&sid=<{$sid}>&sname=<{$sname}>"><增加景点民宿></a></li>
+        <div >
+            <{foreach $residence as $val}>
+            <ul class="list">
+                <li>民宿名称：<{$val.name}></li>
+                <li>星级评价：<{$val.star}></li>
+                <li>联系方式：<{$val.contact}></li>
+            </ul>
+            <{foreachelse}>
+            <div class="empty">暂无民宿数据</div>
+            <{/foreach}>
+        </div>
+    </ul>
+</div>
+<{include file="Public/footer.html" }>
+</body>
+</html>
